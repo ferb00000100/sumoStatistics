@@ -60,5 +60,5 @@ typings/
 # next.js build output
 .next
 
-sumo-audit/src/data/*
+sumo-audit/src/data/prod_collectors_2020-03-23.json
 .idea
