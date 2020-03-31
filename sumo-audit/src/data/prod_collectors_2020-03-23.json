@@ -1,0 +1,15 @@
+{
+  "collectors":[{
+    "id":9843095,
+    "name":"Archive ",
+    "timeZone":"Etc/UTC",
+    "fields":{
+      "finance_code":"sun"
+    },
+    "links":[{
+      "rel":"sources",
+      "href":"/v1/collectors//sources"
+    }],
+    "ephemeral":false
+}]
+}
