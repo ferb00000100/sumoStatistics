@@ -60,5 +60,5 @@ typings/
 # next.js build output
 .next
 
-./sumo-audit/src/data/*
-.idea/*
+sumo-audit/src/data/*
+.idea
