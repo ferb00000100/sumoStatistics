@@ -1,11 +1,11 @@
 import React from "react";
-import CollectorPage from "../../pages/CollectorPage";
+import Collectors from "../../pages/collectors";
 
 const CollectorDetails = () => {
 
 	return (
 
-	<CollectorPage/>
+	<Collectors/>
 
 	)
 }

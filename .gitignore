@@ -62,3 +62,7 @@ typings/
 
 sumo-audit/src/data/prod_collectors_2020-03-23.json
 *.idea
+
+sumoStatistics/serverless.yml
+
+sumo-audit/frontend/config.js

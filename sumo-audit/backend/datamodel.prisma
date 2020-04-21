@@ -1,0 +1,7 @@
+type Collector {
+    id: ID! @id
+    name: String!
+    instanceID: String!
+    account: Int
+    owner: String
+}

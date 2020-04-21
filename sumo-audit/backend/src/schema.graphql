@@ -1,0 +1,381 @@
+# source: http://localhost:4466
+# timestamp: Thu Apr 16 2020 14:58:12 GMT-0600 (Mountain Daylight Time)
+
+type AggregateCollector {
+  count: Int!
+}
+
+type BatchPayload {
+  """The number of nodes that have been affected by the Batch operation."""
+  count: Long!
+}
+
+type Collector implements Node {
+  id: ID!
+  name: String!
+  instanceID: String!
+  account: Int
+  owner: String
+}
+
+"""A connection to a list of items."""
+type CollectorConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [CollectorEdge]!
+  aggregate: AggregateCollector!
+}
+
+input CollectorCreateInput {
+  id: ID
+  name: String!
+  instanceID: String!
+  account: Int
+  owner: String
+}
+
+"""An edge in a connection."""
+type CollectorEdge {
+  """The item at the end of the edge."""
+  node: Collector!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum CollectorOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  instanceID_ASC
+  instanceID_DESC
+  account_ASC
+  account_DESC
+  owner_ASC
+  owner_DESC
+}
+
+type CollectorPreviousValues {
+  id: ID!
+  name: String!
+  instanceID: String!
+  account: Int
+  owner: String
+}
+
+type CollectorSubscriptionPayload {
+  mutation: MutationType!
+  node: Collector
+  updatedFields: [String!]
+  previousValues: CollectorPreviousValues
+}
+
+input CollectorSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [CollectorSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [CollectorSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [CollectorSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: CollectorWhereInput
+}
+
+input CollectorUpdateInput {
+  name: String
+  instanceID: String
+  account: Int
+  owner: String
+}
+
+input CollectorUpdateManyMutationInput {
+  name: String
+  instanceID: String
+  account: Int
+  owner: String
+}
+
+input CollectorWhereInput {
+  """Logical AND on all given filters."""
+  AND: [CollectorWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [CollectorWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [CollectorWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  name: String
+
+  """All values that are not equal to given value."""
+  name_not: String
+
+  """All values that are contained in given list."""
+  name_in: [String!]
+
+  """All values that are not contained in given list."""
+  name_not_in: [String!]
+
+  """All values less than the given value."""
+  name_lt: String
+
+  """All values less than or equal the given value."""
+  name_lte: String
+
+  """All values greater than the given value."""
+  name_gt: String
+
+  """All values greater than or equal the given value."""
+  name_gte: String
+
+  """All values containing the given string."""
+  name_contains: String
+
+  """All values not containing the given string."""
+  name_not_contains: String
+
+  """All values starting with the given string."""
+  name_starts_with: String
+
+  """All values not starting with the given string."""
+  name_not_starts_with: String
+
+  """All values ending with the given string."""
+  name_ends_with: String
+
+  """All values not ending with the given string."""
+  name_not_ends_with: String
+  instanceID: String
+
+  """All values that are not equal to given value."""
+  instanceID_not: String
+
+  """All values that are contained in given list."""
+  instanceID_in: [String!]
+
+  """All values that are not contained in given list."""
+  instanceID_not_in: [String!]
+
+  """All values less than the given value."""
+  instanceID_lt: String
+
+  """All values less than or equal the given value."""
+  instanceID_lte: String
+
+  """All values greater than the given value."""
+  instanceID_gt: String
+
+  """All values greater than or equal the given value."""
+  instanceID_gte: String
+
+  """All values containing the given string."""
+  instanceID_contains: String
+
+  """All values not containing the given string."""
+  instanceID_not_contains: String
+
+  """All values starting with the given string."""
+  instanceID_starts_with: String
+
+  """All values not starting with the given string."""
+  instanceID_not_starts_with: String
+
+  """All values ending with the given string."""
+  instanceID_ends_with: String
+
+  """All values not ending with the given string."""
+  instanceID_not_ends_with: String
+  account: Int
+
+  """All values that are not equal to given value."""
+  account_not: Int
+
+  """All values that are contained in given list."""
+  account_in: [Int!]
+
+  """All values that are not contained in given list."""
+  account_not_in: [Int!]
+
+  """All values less than the given value."""
+  account_lt: Int
+
+  """All values less than or equal the given value."""
+  account_lte: Int
+
+  """All values greater than the given value."""
+  account_gt: Int
+
+  """All values greater than or equal the given value."""
+  account_gte: Int
+  owner: String
+
+  """All values that are not equal to given value."""
+  owner_not: String
+
+  """All values that are contained in given list."""
+  owner_in: [String!]
+
+  """All values that are not contained in given list."""
+  owner_not_in: [String!]
+
+  """All values less than the given value."""
+  owner_lt: String
+
+  """All values less than or equal the given value."""
+  owner_lte: String
+
+  """All values greater than the given value."""
+  owner_gt: String
+
+  """All values greater than or equal the given value."""
+  owner_gte: String
+
+  """All values containing the given string."""
+  owner_contains: String
+
+  """All values not containing the given string."""
+  owner_not_contains: String
+
+  """All values starting with the given string."""
+  owner_starts_with: String
+
+  """All values not starting with the given string."""
+  owner_not_starts_with: String
+
+  """All values ending with the given string."""
+  owner_ends_with: String
+
+  """All values not ending with the given string."""
+  owner_not_ends_with: String
+}
+
+input CollectorWhereUniqueInput {
+  id: ID
+}
+
+"""Raw JSON value"""
+scalar Json
+
+"""
+The `Long` scalar type represents non-fractional signed whole numeric values.
+Long can represent values between -(2^63) and 2^63 - 1.
+"""
+scalar Long
+
+type Mutation {
+  createCollector(data: CollectorCreateInput!): Collector!
+  updateCollector(data: CollectorUpdateInput!, where: CollectorWhereUniqueInput!): Collector
+  deleteCollector(where: CollectorWhereUniqueInput!): Collector
+  upsertCollector(where: CollectorWhereUniqueInput!, create: CollectorCreateInput!, update: CollectorUpdateInput!): Collector!
+  updateManyCollectors(data: CollectorUpdateManyMutationInput!, where: CollectorWhereInput): BatchPayload!
+  deleteManyCollectors(where: CollectorWhereInput): BatchPayload!
+  executeRaw(database: PrismaDatabase, query: String!): Json!
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+"""An object with an ID"""
+interface Node {
+  """The id of the object."""
+  id: ID!
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+enum PrismaDatabase {
+  default
+}
+
+type Query {
+  collectors(where: CollectorWhereInput, orderBy: CollectorOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Collector]!
+  collector(where: CollectorWhereUniqueInput!): Collector
+  collectorsConnection(where: CollectorWhereInput, orderBy: CollectorOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CollectorConnection!
+
+  """Fetches an object given its ID"""
+  node(
+    """The ID of an object"""
+    id: ID!
+  ): Node
+}
+
+type Subscription {
+  collector(where: CollectorSubscriptionWhereInput): CollectorSubscriptionPayload
+}

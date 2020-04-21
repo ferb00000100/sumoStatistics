@@ -1,9 +1,8 @@
 import React from "react";
-import {Headers} from "../styles";
-import Collectors from "../data/prod_collectors_2020-03-23";
-import API from "../utils/API";
+import {Headers} from "../styles/index";
+// import Collectors from "../src_backup/data/prod_collectors_2020-03-23";
+// import API from "../utils/API";
 // import {Col} from 'reactstrap';
-// import { Headers } from '../styles';
 
 
 function NavBarPage() {
@@ -13,10 +12,10 @@ function NavBarPage() {
 // 	API.getCollectors();
 //
 // }
-const handleButtonClick = () => {
-	API.getCollectors(Collectors)
-
-}
+// const handleButtonClick = () => {
+// 	API.getCollectors(Collectors)
+//
+// }
 
 	return (
 
@@ -38,7 +37,7 @@ const handleButtonClick = () => {
 				</div>
 				<div className="tab-pane fade" id="collectors">
 					<p>Select the refresh button to get the lastest data of collectors.</p>
-					<button type="button" className="btn btn-success" onClick={handleButtonClick}>Pull Collectors</button>
+					{/*<button type="button" className="btn btn-success" onClick={handleButtonClick}>Pull Collectors</button>*/}
 				</div>
 
 			</div>

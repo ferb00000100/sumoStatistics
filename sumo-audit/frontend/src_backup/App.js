@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container, Col } from 'reactstrap';
-import NavBarPage from './pages/NavBarPage';
-import CollectorPage from './pages/CollectorPage';
+import NavBarPage from '../pages/navBarPage';
+import Collectors from '../pages/collectors';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
                     <NavBarPage/>
                 </Route>
                 <Route exact path={"/collectors"}>
-                    <CollectorPage/>
+                    <Collectors/>
                 </Route>
             </Switch>
         </Container>
